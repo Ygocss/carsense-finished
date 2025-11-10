@@ -1,0 +1,17 @@
+﻿{
+  email diego.sierra17@icloud.com
+}
+
+carsense.online, www.carsense.online {
+  encode gzip zstd
+
+  @api path /api/*
+  handle @api {
+    reverse_proxy api:8000
+  }
+
+  # Todo lo demás va al frontend (Nginx) en el contenedor "web"
+  handle {
+    reverse_proxy web:80
+  }
+}

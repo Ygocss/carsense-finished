@@ -1,0 +1,32 @@
+﻿services:
+  api:
+    build: ./dev/carsense/carsense-main/carsense-main/backend
+    container_name: api
+    env_file:
+      - ./dev/carsense/carsense-main/carsense-main/backend/.env
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./dev/carsense/carsense-main/carsense-main/frontend
+    container_name: web
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:alpine
+    container_name: reverse-proxy
+    depends_on:
+      - api
+      - web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
