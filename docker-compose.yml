@@ -2,8 +2,12 @@
   api:
     build: ./dev/carsense/carsense-main/carsense-main/backend
     container_name: api
-    env_file:
-      - ./dev/carsense/carsense-main/carsense-main/backend/.env
+    environment:
+      ENV: production
+      PORT: 8000
+      SECRET_KEY: ${SECRET_KEY}
+      ACCESS_TOKEN_EXPIRE_MINUTES: 43200
+      CORS_ORIGINS: '["https://carsense.online","https://www.carsense.online"]'
     restart: unless-stopped
 
   web:
