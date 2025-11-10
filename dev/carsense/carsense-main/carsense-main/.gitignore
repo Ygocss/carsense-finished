@@ -1,0 +1,41 @@
+# --- Global ---
+.DS_Store
+*.log
+*.tmp
+*.swp
+
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*.sqlite
+*.db
+.venv/
+.env
+.env.*
+dist/
+build/
+# alembic: ¡sí queremos versionar las migraciones!
+# (no ignores alembic/versions)
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+npm-debug.log*
+yarn-error.log*
+
+# --- IDE ---
+.vscode/
+.idea/
+# Backend
+backend/app.db
+backend/.env
+
+# Frontend
+frontend/.env
+
+# Python cache
+**/__pycache__/
+*.pyc

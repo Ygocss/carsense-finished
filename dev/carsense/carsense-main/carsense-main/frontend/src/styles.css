@@ -1,0 +1,110 @@
+:root {
+  --bg:#0d1720; --panel:#121f2a; --muted:#a5b8cc; --text:#eaf2ff; --line:#24384b;
+  --ok:#1f8a4c; --warn:#a36a08; --danger:#9b2c2c; --button:#1f3b53; --button-h:#25445f;
+}
+*{box-sizing:border-box} html,body,#root{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,Segoe UI,Roboto,Arial}
+a{color:#88c2ff;text-decoration:none}
+nav a{padding:6px 10px;border-radius:6px}
+nav a:hover{background:#152434}
+.container{max-width:1100px;margin:18px auto;padding:0 16px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.panel-danger{border-color:#5a1a1a;background:#1a0f12}
+.row{display:flex;align-items:center}
+.badge{background:#142536;border:1px solid var(--line);padding:6px 10px;border-radius:999px}
+.input,.select{background:#0f1b25;border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:10px}
+.input::placeholder{color:#6c8196}
+.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:10px;border:1px solid var(--line)}
+.table th,.table td{padding:10px;border-bottom:1px solid var(--line)}
+.table thead{background:#0f1a23}
+button.btn{background:var(--button);border:1px solid var(--line);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer}
+button.btn:hover{background:var(--button-h)}
+button.btn.ok{background:var(--ok)}
+button.btn.ghost{background:transparent;border-color:var(--line)}
+.muted{color:var(--muted)}
+.space{height:8px}
+
+
+
+/* ===== LOGIN (full-viewport) ===== */
+html, body, #root { height: 100%; }
+.login-bg{
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(1200px 700px at 20% 10%, #2f64ff 0%, #0c2ea8 35%, #0a1a4d 100%);
+  overflow: hidden;
+}
+
+/* blobs decorativos */
+.blob{
+  position:absolute; filter: blur(40px); opacity:.35; pointer-events:none;
+  width: 380px; height: 380px; border-radius: 999px;
+  background: linear-gradient(135deg, #8ab6ff, #2f64ff);
+}
+.blob.b1{ top:-80px; left:-80px; }
+.blob.b2{ bottom:-120px; right:-120px; background: linear-gradient(135deg,#9fd4ff,#4c9dff); width:450px;height:450px;}
+.blob.b3{ top:40%; left:70%; width:260px; height:260px; background: linear-gradient(135deg,#5fb8ff,#2f64ff); }
+
+.login-card{
+  position: relative;
+  width: min(90vw, 420px);
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.login-header{ display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+.logo-circle{
+  width: 44px; height: 44px; border-radius: 999px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25);
+}
+.login-brand{ font-size: 12px; opacity:.8; }
+.login-title{ margin: 0; font-size: 28px; line-height: 1.2; }
+
+.login-label{ font-size: 12px; opacity:.85; margin-top: 12px; display:block; }
+.login-input{
+  width: 100%; margin-top: 6px;
+  padding: 10px 12px; border-radius: 10px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff; outline: none;
+}
+.login-input::placeholder{ color: rgba(255,255,255,.75); }
+
+.login-row{ display:flex; justify-content:flex-end; margin-top: 6px; }
+.link{ background:none; border:none; color:#cfe1ff; cursor:pointer; padding:0; }
+.link:hover{ text-decoration: underline; }
+
+.btn{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px; border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.12);
+  color:#fff; cursor:pointer;
+}
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+.btn-primary{
+  margin-top: 10px;
+  background: linear-gradient(180deg, #2f64ff, #2047c9);
+  border-color: rgba(255,255,255,.28);
+}
+.sep{ display:flex; align-items:center; justify-content:center; gap:10px; margin:14px 0 8px; opacity:.85; }
+.sep::before,.sep::after{ content:""; height:1px; flex:1; background: rgba(255,255,255,.25); }
+
+.socials{ display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+.btn-social{ background: rgba(255,255,255,.18); }
+
+.login-error{
+  margin-top: 10px; padding: 10px 12px; border-radius: 10px;
+  background: rgba(255, 68, 68, .18); border: 1px solid rgba(255, 68, 68, .35);
+  color: #fff;
+}
+.login-foot{ margin-top: 12px; text-align:center; opacity:.9; }

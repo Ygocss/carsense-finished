@@ -1,0 +1,29 @@
+# Dependencias Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+ECHO est  activado.
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+ECHO est  activado.
+# Entornos / IDE
+.env
+.env.*
+.vscode/
+.idea/
+ECHO est  activado.
+# Build / dist
+dist/
+build/
+.parcel-cache/
+.next/
+coverage/
+ECHO est  activado.
+# SO
+Thumbs.db
+.DS_Store
